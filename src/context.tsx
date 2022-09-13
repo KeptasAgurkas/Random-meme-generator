@@ -123,25 +123,3 @@ export function ChatProvider(props: PropsWithChildren<{}>) {
     </ChatContext.Provider>
   );
 }
-
-export function useChatContext() {
-  const ctx = useContext(ChatContext);
-  if (ctx == null) throw new Error("Provide chat context");
-  return ctx;
-}
-
-export function useUserContext() {
-  const { rnd, setRND } = useChatContext();
-  return [
-    rnd,
-    () => {
-      const random = Math.random() * 1000;
-      setRND(random);
-    },
-  ] as const;
-}
-
-export function Sample() {
-  const [random] = useUserContext();
-  return <div>{random}</div>;
-}
