@@ -2,7 +2,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 import Header from "./components/header";
 import { Meme } from "./components/meme";
-import { ChatProvider, MemePricingGuard, MemeProvider } from "./context";
+import { ChatProvider, MemeProvider } from "./context";
 const client = new QueryClient();
 
 function App() {
